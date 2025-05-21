@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>青岛威瑞富泰能源有限公司 - 智能化能源解决方案</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0062cc;
+            --accent-color: #00d4ff;
+            --dark-color: #001833;
+            --light-color: #f0f8ff;
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-color);
+            color: white;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        .video-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+            opacity: 0.8;
+        }
+        
+        .hero-content {
+            z-index: 1;
+            padding: 2rem;
+            max-width: 90%;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.7);
+        }
+        
+        .tagline {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--gradient);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(0, 98, 204, 0.5);
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(0, 98, 204, 0.7);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 4rem 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-dark {
+            background-color: var(--dark-color);
+        }
+        
+        .section-gradient {
+            background: var(--gradient);
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 1rem;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            padding: 0 1rem;
+        }
+        
+        /* Services */
+        .services {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 4px solid var(--accent-color);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-color);
+        }
+        
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .service-description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Jobs Section */
+        .jobs-container {
+            margin-top: 3rem;
+        }
+        
+        .job-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.3s ease;
+        }
+        
+        .job-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .job-title {
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+        }
+        
+        .job-section {
+            margin-bottom: 1.5rem;
+        }
+        
+        .job-section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .job-section-title i {
+            margin-right: 0.5rem;
+            color: var(--accent-color);
+        }
+        
+        .job-list {
+            list-style-position: inside;
+            padding-left: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .job-list li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Benefits Section */
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .benefit-icon {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 40px;
+            text-align: center;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            margin-top: 2rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .contact-icon {
+            margin-right: 1rem;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+            width: 40px;
+            text-align: center;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.6;
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .pulsing {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* Particle background */
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+        
+        /* Responsive Media Queries */
+        @media (min-width: 768px) {
+            .services, .benefits {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-content {
+                flex-direction: row;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .logo {
+                font-size: 3rem;
+            }
+            
+            .tagline {
+                font-size: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .services {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* AI Interaction Animation */
+        .ai-interaction {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            margin: 0 auto 2rem;
+        }
+        
+        .ai-circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 212, 255, 0.3);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+            animation: rotate 10s linear infinite;
+        }
+        
+        .ai-circle:nth-child(2) {
+            width: 75%;
+            height: 75%;
+            top: 12.5%;
+            left: 12.5%;
+            border-color: rgba(0, 98, 204, 0.3);
+            animation-duration: 7s;
+            animation-direction: reverse;
+        }
+        
+        .ai-circle:nth-child(3) {
+            width: 50%;
+            height: 50%;
+            top: 25%;
+            left: 25%;
+            border-color: rgba(255, 255, 255, 0.3);
+            animation-duration: 5s;
+        }
+        
+        .ai-core {
+            position: absolute;
+            width: 30%;
+            height: 30%;
+            top: 35%;
+            left: 35%;
+            background: radial-gradient(circle at center, var(--accent-color), var(--primary-color));
+            border-radius: 50%;
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.8);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        .ai-particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.8);
+            opacity: 0.8;
+            animation: particleMove 3s ease-in-out infinite;
+        }
+        
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        
+        @keyframes particleMove {
+            0% {
+                transform: translate(0, 0);
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                transform: translate(calc(random(-1, 1) * 40px), calc(random(-1, 1) * 40px));
+                opacity: 0;
+            }
+        }
+        
+        /* Data Flow Animation */
+        .data-flow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .data-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(0,0,0,0), var(--accent-color), rgba(0,0,0,0));
+            opacity: 0.5;
+            animation: dataFlow 8s linear infinite;
+        }
+        
+        @keyframes dataFlow {
+            0% {
+                width: 0;
+                opacity: 0;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            100% {
+                width: 100%;
+                opacity: 0;
+            }
+        }
+        
+        /* Digital Counter */
+        .digital-counter {
+            font-family: 'Courier New', monospace;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            letter-spacing: 2px;
+            margin-top: 1rem;
+        }
+        
+        /* Glitch Effect */
+        .glitch {
+            position: relative;
+            animation: glitch 1s linear infinite;
+        }
+        
+        @keyframes glitch {
+            2%, 64% {
+                transform: translate(2px, 0) skew(0deg);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0) skew(0deg);
+            }
+            62% {
+                transform: translate(0, 0) skew(5deg);
+            }
+        }
+        
+        .glitch:before,
+        .glitch:after {
+            content: attr(title);
+            position: absolute;
+            left: 0;
+        }
+        
+        .glitch:before {
+            animation: glitchTop 1s linear infinite;
+            clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+            -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+        }
+        
+        @keyframes glitchTop {
+            2%, 64% {
+                transform: translate(2px, -2px);
+            }
+            4%, 60% {
+                transform: translate(-2px, 2px);
+            }
+            62% {
+                transform: translate(13px, -1px) skew(-13deg);
+            }
+        }
+        
+        .glitch:after {
+            animation: glitchBottom 1.5s linear infinite;
+            clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+            -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+        }
+        
+        @keyframes glitchBottom {
+            2%, 64% {
+                transform: translate(-2px, 0);
+            }
+            4%, 60% {
+                transform: translate(-2px, 0);
+            }
+            62% {
+                transform: translate(-22px, 5px) skew(21deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- Video Background - Using placeholder animation instead of video -->
+            <div class="video-bg">
+                <!-- Dynamic AI Animation -->
+                <div class="data-flow">
+                    <div class="data-line" style="top: 20%; animation-delay: 0s;"></div>
+                    <div class="data-line" style="top: 40%; animation-delay: 2s;"></div>
+                    <div class="data-line" style="top: 60%; animation-delay: 4s;"></div>
+                    <div class="data-line" style="top: 80%; animation-delay: 6s;"></div>
+                </div>
+                <div class="particles">
+                    <div class="particle" style="top: 20%; left: 30%; animation-delay: 0s;"></div>
+                    <div class="particle" style="top: 70%; left: 80%; animation-delay: 1s;"></div>
+                    <div class="particle" style="top: 40%; left: 60%; animation-delay: 2s;"></div>
+                    <div class="particle" style="top: 80%; left: 20%; animation-delay: 3s;"></div>
+                    <div class="particle" style="top: 10%; left: 90%; animation-delay: 4s;"></div>
+                    <div class="particle" style="top: 50%; left: 10%; animation-delay: 5s;"></div>
+                    <div class="particle" style="top: 30%; left: 70%; animation-delay: 6s;"></div>
+                    <div class="particle" style="top: 90%; left: 40%; animation-delay: 7s;"></div>
+                </div>
+            </div>
+            
+            <div class="hero-content">
+                <!-- AI Interaction Animation -->
+                <div class="ai-interaction">
+                    <div class="ai-circle"></div>
+                    <div class="ai-circle"></div>
+                    <div class="ai-circle"></div>
+                    <div class="ai-core"></div>
+                    <!-- AI Particles -->
+                    <div class="ai-particle" style="top: 20%; left: 30%;"></div>
+                    <div class="ai-particle" style="top: 70%; left: 80%;"></div>
+                    <div class="ai-particle" style="top: 40%; left: 60%;"></div>
+                    <div class="ai-particle" style="top: 80%; left: 20%;"></div>
+                </div>
+                
+                <h1 class="logo glitch" title="青岛威瑞富泰能源有限公司">青岛威瑞富泰能源有限公司</h1>
+                <p class="tagline">智能化商品投资与供应链服务体系的领航者</p>
+                <div class="digital-counter" id="counter">AI.ENERGY.FUTURE:// <span id="count">0</span></div>
+                <a href="#jobs" class="cta-button">加入我们 <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+        
+        <!-- About Section -->
+        <section class="section section-dark" id="about">
+            <h2 class="section-title">公司简介</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>青岛威瑞富泰能源有限公司，座落于风景秀丽的沿海开放城市——中国青岛，是一家专注于大宗商品贸易、能源产品、化工品、仓储物流及全球供应链管理多元化企业。近年来，公司积极结合人工智能（AI）技术，构建智能化商品投资与供应链服务体系，为客户提供更加精准、高效的决策支持和资源整合服务。</p>
+                    <p style="margin-top: 1rem;">公司凭借独特的战略眼光与卓越的运营能力，形成了三大核心业务板块：商品供应链、商品资源投资、智能化量化交易。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Services Section -->
+        <section class="section section-gradient">
+            <h2 class="section-title" style="color: white;">核心业务</h2>
+            <div class="services">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3 class="service-title">商品供应链</h3>
+                    <p class="service-description">公司在商品供应链领域深耕细作，主营煤炭、硫磺、锰矿、铁矿等重要资源。构建了一套完备且高效的供应链体系，从资源采购、运输调配到终端销售，每个环节都经过精心把控与优化。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="service-title">商品资源投资</h3>
+                    <p class="service-description">在商品资源投资板块，公司展现出敏锐的市场洞察力。聚焦于矿产与农业领域，积极布局各类投资项目。通过整合资源，推动农业产业的现代化升级，致力于实现农产品的高品质、高效率生产。</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="service-title">智能化量化交易</h3>
+                    <p class="service-description">公司紧跟时代步伐，积极拥抱科技变革，将智能化量化交易作为重要业务板块。依托人工智能团队，运用先进的人工智能算法与大数据分析技术，构建精准的量化交易模型。</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Jobs Section -->
+        <section class="section section-dark" id="jobs">
+            <h2 class="section-title">人才招聘</h2>
+            <div class="jobs-container">
+                <!-- Job 1 -->
+                <div class="job-card">
+                    <h3 class="job-title">量化研究员/交易员</h3>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-tasks"></i> 岗位职责</h4>
+                        <ul class="job-list">
+                            <li>利用金融市场交易数据，对大宗商品交易量化分析和策略实现投资目标并控制风险</li>
+                            <li>运用量化策略开发构建公司品种领域知识库，对大模型进行量化建构及优化</li>
+                            <li>程序自动化语言，测试编写程序化交易模型</li>
+                            <li>跟踪行业市场进行策略评估调整，研究技术前沿，定期做该领域的前沿学术及市场调研</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-user-check"></i> 任职要求</h4>
+                        <ul class="job-list">
+                            <li>硕士及以上学历，金融工程、计算机、数学类相关专业</li>
+                            <li>熟练掌握Python、R、MATLAB等至少一种编程语言，对文华财经WT8、天勤、掘金、Backtrader，TradingView、TBQuant等平台下的程序化交易模型有过经验</li>
+                            <li>熟悉交易规则和特点，对量化及人工智能有兴趣并愿意积极学习新技术</li>
+                            <li>善于快速学习新知识，良好的表达和沟通能力，工作认真负责，严谨细致，有良好的创新意识和团队精神</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <div class="job-card">
+                    <h3 class="job-title">NLP自然语言处理工程师</h3>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-tasks"></i> 岗位职责</h4>
+                        <ul class="job-list">
+                            <li>推荐/搜索算法优化：探索LLM、深度学习、强化学习等相关算法在投资领域的应用（如量化分析、机会发现），结合金融场景需求落地解决方案</li>
+                            <li>NLP与大模型应用：精通NLP技术原理，负责信息抽取、文本相关性建模等任务，支持多语言、多模态场景</li>
+                            <li>模型优化：对开源大模型（如LLaMA、GPT）、小模型进行架构优化、训练调参及性能调优，提升特定任务下的推理效率</li>
+                            <li>前沿技术探索：跟踪LLM领域进展（如多智能体、System2架构），推动Agent、RAG等技术在业务中的创新应用</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-user-check"></i> 任职要求</h4>
+                        <ul class="job-list">
+                            <li>计算机科学、人工智能等相关专业硕士及以上学历</li>
+                            <li>编程语言：熟练掌握Python，具备高性能代码优化能力（C++/CUDA加分）</li>
+                            <li>框架经验：精通PyTorch/TensorFlow，熟悉DeepSpeed等分布式训练框架</li>
+                            <li>NLP方向：精通Transformer架构，熟悉BERT/GPT/LLaMA等预训练模型，有大模型微调经验</li>
+                            <li>有信息抽取、金融NLP等项目经验，或顶会论文/竞赛获奖记录（如Kaggle、ACL）</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Job 3 -->
+                <div class="job-card">
+                    <h3 class="job-title">人工智能训练师</h3>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-tasks"></i> 岗位职责</h4>
+                        <ul class="job-list">
+                            <li>收集所需文本数据并进行整理、识别、分析标注</li>
+                            <li>进行大模型测试训练，收集实际运行数据，分析模型在应用表现，本地环境搭建并部署模型架构，并对模型进行微调与迭代训练</li>
+                            <li>能跟踪该领域的技术前沿，定期做该领域的前沿学术报告研究及应用</li>
+                            <li>完成上级领导安排的其他工作</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="job-section">
+                        <h4 class="job-section-title"><i class="fas fa-user-check"></i> 任职要求</h4>
+                        <ul class="job-list">
+                            <li>硕士及以上学历，人工智能、计算机科学、数学、统计学等相关专业</li>
+                            <li>熟悉使用数据工具能够精准高效进行标注、清洗、预处理，了解机器学习、深度学习基本概念和常见算法</li>
+                            <li>熟练掌握Python、C++等编程语言，快速编程能力强，精通Windows/Linux 操作系统</li>
+                            <li>善于快速学习新知识，良好的表达和沟通能力，工作认真负责，严谨细致，有良好的创新意识和团队精神</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Benefits Section -->
+            <h2 class="section-title" style="margin-top: 3rem;">福利待遇</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </div>
+                    <div>
+                        <p>硕士岗位提供极具竞争力的年薪，首年薪资高达20-50万，根据个人能力与绩效表现还有广阔的上升空间</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <p>提供住宿（上班步行10分钟，男女独立空间，不在同一套房子内）</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div>
+                        <p>六险一金（含一份商业险）</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <div>
+                        <p>提供交通、餐饮、电话补贴</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <div>
+                        <p>按国家法定节假日休息（过年提前），有丰富多彩的活动及各种节日福利</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div>
+                        <p>员工定期体检+国内外旅游，提供海外深造机会</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <p>上班时间：周一到周五8:30~17:30（周末双休）</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <p>工作地点：青岛市市南区香港中路26号远雄国际广场909-911室（五四广场附近，靠近地铁2.3号线）</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section class="section section-gradient">
+            <h2 class="section-title" style="color: white;">联系我们</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <p>有意者请将简历发送至：<strong>hanxiaoxuan@wereen.com</strong></p>
+                        <p>（以"<strong>学校+姓名+岗位</strong>"命名）</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <div>
+                        <p>联系人：韩女士 <strong>15275423180</strong></p>
+                        <p>联系人：王女士 <strong>18663979512</strong></p>
+                        <p>公司电话：<strong>0532-55673088</strong></p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <div>
+                        <p>公司网站：<strong>www.wereen.com</strong></p>
+                        <p>关注"<strong>威瑞富泰</strong>"公众号获取更多信息</p>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <div>
+                        <p>地址：青岛市市南区香港中路26号远雄国际广场909-911室</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2025 青岛威瑞富泰能源有限公司 All Rights Reserved.</p>
+        </footer>
+    </div>
+    
+    <script>
+        // Digital counter animation
+        let count = 0;
+        const maxCount = 1000;
+        const countElement = document.getElementById('count');
+        
+        function updateCounter() {
+            count += Math.floor(Math.random() * 10) + 1;
+            if (count > maxCount) count = 0;
+            countElement.textContent = count.toString().padStart(4, '0');
+        }
+        
+        setInterval(updateCounter, 100);
+        
+        // Generate random particles
+        function createParticles() {
+            const particles = document.querySelector('.particles');
+            for (let i = 0; i < 20; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.animationDelay = `${Math.random() * 5}s`;
+                particles.appendChild(particle);
+            }
+        }
+        
+        createParticles();
+        
+        // Data flow animation
+        function createDataLines() {
+            const dataFlow = document.querySelector('.data-flow');
+            for (let i = 0; i < 10; i++) {
+                const dataLine = document.createElement('div');
+                dataLine.classList.add('data-line');
+                dataLine.style.top = `${Math.random() * 100}%`;
+                dataLine.style.animationDelay = `${Math.random() * 8}s`;
+                dataFlow.appendChild(dataLine);
+            }
+        }
+        
+        createDataLines();
+        
+        // AI Particle movement
+        function moveAIParticles() {
+            const particles = document.querySelectorAll('.ai-particle');
+            particles.forEach(particle => {
+                const randomX = (Math.random() - 0.5) * 100;
+                const randomY = (Math.random() - 0.5) * 100;
+                particle.style.transform = `translate(${randomX}px, ${randomY}px)`;
+            });
+        }
+        
+        setInterval(moveAIParticles, 3000);
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
